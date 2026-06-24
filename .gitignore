@@ -282,3 +282,6 @@ emscripten/*.cpp
 
 # macOS Trashes
 *.DS_Store
+
+# SDL Java source junction (created by scripts/setup-junction.bat)
+android/app/src/main/java/org/libsdl/app/
