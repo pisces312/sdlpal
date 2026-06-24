@@ -1,3 +1,10 @@
+# Disable R8 optimization passes (method/field inlining, class merging) which
+# break SDL3's heavy JNI runtime (FindClass + GetStaticMethodID callbacks +
+# RegisterNatives across 5 SDL classes). Keep rules only freeze names, not
+# code transforms. AGP 9.x requires proguard-android-optimize.txt, so we
+# disable optimization here instead.
+-dontoptimize
+
 # Keep SDL Java classes (JNI callbacks)
 -keep class org.libsdl.app.** { *; }
 

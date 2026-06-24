@@ -285,3 +285,6 @@ emscripten/*.cpp
 
 # SDL Java source junction (created by scripts/setup-junction.bat)
 android/app/src/main/java/org/libsdl/app/
+
+# WorkBuddy workspace data (local only)
+.workbuddy/
