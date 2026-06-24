@@ -62,10 +62,33 @@ cd D:\3rd-party-projects\sdlpal\android
 scripts\build-android.bat
 ```
 
+## Release 签名构建
+
+`build.gradle` 中配置了 `signingConfigs.release`，从环境变量读取签名信息：
+
+| 环境变量 | 值 |
+|----------|-----|
+| KEY_STORE | keystore 文件路径 |
+| KEY_STORE_PASSWORD | keystore 密码 |
+| KEY_ALIAS | key 别名 |
+| KEY_PASSWORD | key 密码 |
+
+```powershell
+$env:KEY_STORE = "D:\my-projects\my-backup\backup-settings\my-android-release.keystore"
+$env:KEY_STORE_PASSWORD = "<password>"
+$env:KEY_ALIAS = "pisces312"
+$env:KEY_PASSWORD = "<password>"
+
+# 或直接用构建脚本
+build-scripts\build-android.bat release
+```
+
 ## 构建产物
 
-- Debug APK: `android\app\build\outputs\apk\debug\app-debug.apk`
-- 大小: ~9.35 MB
+| 类型 | 路径 | 大小 |
+|------|------|------|
+| Debug | `android\app\build\outputs\apk\debug\app-debug.apk` | ~9.35 MB |
+| Release | `android\app\build\outputs\apk\release\app-release.apk` | ~7.84 MB |
 
 ## 踩坑记录
 
