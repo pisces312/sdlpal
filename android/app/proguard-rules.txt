@@ -1,0 +1,10 @@
+# Keep SDL Java classes (JNI callbacks)
+-keep class org.libsdl.app.** { *; }
+
+# Keep app Activity (SDL entry point)
+-keep class com.sdlpal.sdlpal.** { *; }
+
+# Keep native methods
+-keepclasseswithmembernames class * {
+    native <methods>;
+}
